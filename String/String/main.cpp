@@ -30,17 +30,14 @@ char* StrCpy(char* dest, char* src)
 // 문제 3 문자열 덧붙이는 함수
 char* StrCat(char* dest, char* src)
 {
-	while (*dest != '\0')
+	int Len = StrLen(dest);
+	int i = 0;
+	while (src[i] != '\0')
 	{
-		dest++;
+		dest[Len + i] = src[i];
+		i++;
 	}
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
+	dest[Len + i] = '\0';
 	return dest;
 }
 
