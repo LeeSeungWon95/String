@@ -41,12 +41,29 @@ char* StrCat(char* dest, char* src)
 	return dest;
 }
 
+// 문제 4 두 문자열 비교하는 함수
+int StrCmp(char* a, char* b)
+{
+	int i = 0;
+	while (a[i] != '\0' || b[i] != '\0')
+	{
+		if (a[i] > b[i])
+		{
+			return 1;
+		}
+		if (a[i] < b[i])
+		{
+			return -1;
+		}
+		i++;
+	}
+	return 0;
+}
 int main()
 {
 	const int BUF_SIZE = 100;
-	char a[BUF_SIZE] = "Hello";
-	char b[BUF_SIZE] = "World";
-	StrCat(a, b);
-	cout << a << endl;
+	char a[BUF_SIZE] = "Hfllo";
+	char b[BUF_SIZE] = "Hello";
+	cout << StrCmp(a, b) << endl;
 	return 0;
 }
